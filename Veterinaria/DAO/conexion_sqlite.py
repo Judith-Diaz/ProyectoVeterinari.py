@@ -5,7 +5,7 @@ class Conexion():
         self.conexion = sqlite3.connect('Veterinaria/DAO/BDProyectoPy.db')
 
 
-        self.Practica= PracticaMedica()
+   
 
     def mostrar_PracticaMedica(self):
         cursor = self.conexion.cursor()
@@ -15,8 +15,9 @@ class Conexion():
         return registros
     
     def buscar_practicaMedica(self, Practica):
+         Practica= PracticaMedica()
          cursor = self.conexion.cursor()
-         cursor.execute("SELECT IdPracticaMe_pra, decripcion_pra FROM PracticaMedica where IdPracticaMe_pra ="+Practica.getId+" or "+Practica.getDescripcion+" ")
+         cursor.execute("SELECT IdPracticaMe_pra, decripcion_pra FROM PracticaMedica where IdPracticaMe_pra ="+Practica.getId()+" ")
          registros = cursor.fetchall()
          print(registros)  # Agrega esta línea para depurar
          return registros

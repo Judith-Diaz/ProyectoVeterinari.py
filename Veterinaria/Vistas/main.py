@@ -91,7 +91,7 @@ class VentanaPrincipal(QMainWindow):
         Practica= PracticaMedica()
         textoBuscar=self.txtIdPracticaFiltro.text()
         Practica.setId(textoBuscar)
-        Practica.setDescripcion(textoBuscar)
+    
 
         datos=self.base_datos.buscar_practicaMedica(Practica)
         i=len(datos)
@@ -105,7 +105,7 @@ class VentanaPrincipal(QMainWindow):
             self.grdPractica.setItem(tablerow,1,QtWidgets.QTableWidgetItem(row[1]))
 
             tablerow +=1
-          #  self.grdPractica.viewport().update()  # Forzar actualización del widget
+            self.grdPractica.viewport().update()  # Forzar actualización del widget
 
 
 
