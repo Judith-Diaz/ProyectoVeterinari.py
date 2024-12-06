@@ -53,6 +53,7 @@ class VentanaPrincipal(QMainWindow):
 
     def Agregar_Mascota(self):
          self.stackedWidget.setCurrentWidget(self.page_AgregarMascota) 
+         self.Agregar_MascotaSQL()
 
     def  Editar_Mascota(self):
         self.stackedWidget.setCurrentWidget(self.page_EditarMascota) 
@@ -125,6 +126,9 @@ class VentanaPrincipal(QMainWindow):
 
             tablerow +=1
             self.grdPractica.viewport().update()  # Forzar actualización del widget
+
+    def Agregar_MascotaSQL():
+        
 
 
 
