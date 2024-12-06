@@ -5,17 +5,17 @@ class PracticaMedica:
 
 
 
-    def Id(self):
+    def getId(self):
             return self._Id
 
  
-    def Id(self, value):
+    def setId(self, value):
             self._Id = value
 
  
-    def Descripcion(self):
+    def getDescripcion(self):
             return self._Descripcion
 
-    def Descripcion(self, value):
+    def setDescripcion(self, value):
             self._Descripcion = value
 
