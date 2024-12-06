@@ -31,7 +31,7 @@ class VentanaPrincipal(QMainWindow):
         self.btn_menu.clicked.connect(self.moverMenu)
 
         self.base_datos= Conexion()
-        self.Practica= PracticaMedica()
+      
 
     def mostrar_inicio(self):
      self.stackedWidget.setCurrentWidget(self.page_inicio)  # Cambia al widget de inicio
@@ -88,7 +88,7 @@ class VentanaPrincipal(QMainWindow):
             tablerow +=1
            
     def BuscarPracticaMedica(self):
-      
+        Practica= PracticaMedica()
         textoBuscar=self.txtIdPracticaFiltro.text()
         Practica.setId(textoBuscar)
         Practica.setDescripcion(textoBuscar)
