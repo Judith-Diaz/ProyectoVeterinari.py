@@ -91,6 +91,8 @@ class VentanaPrincipal(QMainWindow):
         Practica= PracticaMedica()
         textoBuscar=self.txtIdPracticaFiltro.text()
         Practica.setId(textoBuscar)
+        print("------------------------*********************************************averr que hay adentr de onj")
+        print(Practica.getId())
     
 
         datos=self.base_datos.buscar_practicaMedica(Practica)

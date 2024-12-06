@@ -15,10 +15,14 @@ class Conexion():
         return registros
     
     def buscar_practicaMedica(self, Practica):
-         Practica= PracticaMedica()
+    
+         print("llego------------------------") 
+         print(Practica.getId()) 
          cursor = self.conexion.cursor()
-         cursor.execute("SELECT IdPracticaMe_pra, decripcion_pra FROM PracticaMedica where IdPracticaMe_pra ="+Practica.getId()+" ")
+         consulta=()
+         cursor.execute("SELECT IdPracticaMe_pra, decripcion_pra FROM PracticaMedica where IdPracticaMe_pra ="+Practica.getId()+"")
          registros = cursor.fetchall()
+     
          print(registros)  # Agrega esta línea para depurar
          return registros
     
