@@ -17,64 +17,81 @@ class VentanaPrincipal(QMainWindow):
         super(VentanaPrincipal, self).__init__()
         loadUi('Veterinaria/Vistas/Vista.ui', self)
 
- # Conectar los botones con las funciones
-        self.btnFormInicio.clicked.connect(self.mostrar_inicio)
-        self.btnFormAgregarPractica.clicked.connect(self.mostrar_agregar_practica)
-        self.btnFormVerPractica.clicked.connect(self.mostrar_ver_practica)
-        self.btnBuscarIdpractica.clicked.connect(self.BuscarPracticaMedica)
 
         # Navegar directamente a la página de inicio
         self.stackedWidget.setCurrentWidget(self.page_inicio)
-        # Inicialmente, colapsar la barra lateral
+        # Inicialmente, ACHICAR  la barra lateral DEL MENU
         self.frame_lateral.setMinimumWidth(0)
         self.frame_lateral.setMaximumWidth(0)
         self.btn_menu.clicked.connect(self.moverMenu)
 
+ # Conectar los botones con las funciones
+        self.btnFormInicio.clicked.connect(self.mostrar_inicio)
+
+        #vISTAS DE VER Y BUSCAR PRACTICA MEDICA
+        self.btnFormVerPractica.clicked.connect(self.mostrar_ver_practica)
+        self.btnBuscarIdpractica.clicked.connect(self.BuscarPracticaMedica)
+        #MASCOTAS ABML
+        self.btnFormAgregarMascota.clicked.connect(self.Agregar_Mascota)
+       
+        self.btnFormEditMascota.clicked.connect(self.Editar_Mascota)
+        self.btnFormVerMascota.clicked.connect(self.Ver_Mascota)
+        self.btnFormDeletMasco.clicked.connect(self.Eliminar_Mascota)
+
         self.base_datos= Conexion()
       
-
+    
+                
     def mostrar_inicio(self):
      self.stackedWidget.setCurrentWidget(self.page_inicio)  # Cambia al widget de inicio
 
-    def mostrar_agregar_practica(self):
-        self.stackedWidget.setCurrentWidget(self.page_agregarPractica)  # Cambia a la página de agregar práctica
-
+    
     def mostrar_ver_practica(self):
         self.stackedWidget.setCurrentWidget(self.page_verPractica)   
 
-        self.cargar_practicas()  # Llamar a la función para cargar la tabla con los datos de la base de datos
+        self.cargarGrid_practicas()  # Llamar a la función para cargar la tabla con los datos de la base de datos
 
+    def Agregar_Mascota(self):
+         self.stackedWidget.setCurrentWidget(self.page_AgregarMascota) 
 
+    def  Editar_Mascota(self):
+        self.stackedWidget.setCurrentWidget(self.page_EditarMascota) 
+
+    def  Ver_Mascota(self):
+        self.stackedWidget.setCurrentWidget(self.page_VerMascotas) 
+
+    def  Eliminar_Mascota(self):
+        self.stackedWidget.setCurrentWidget(self.page_EliminarMascota) 
 
 
     def moverMenu(self):
-   
-        width = self.frame_lateral.width() # Obtener el ancho actual del frame_lateral
+    
+            width = self.frame_lateral.width() # Obtener el ancho actual del frame_lateral
 
-        normal = 0  # Acolapsada
-        extender = 250  # expandida
+            normal = 0  # Acolapsada
+            extender = 250  # expandida
 
-        if self.frame_lateral.isVisible():  # Si la barra lateral está visible, la colapsamos
-            self.animacion = QPropertyAnimation(self.frame_lateral, b"minimumWidth")
-            self.animacion.setDuration(250)
-            self.animacion.setStartValue(width)
-            self.animacion.setEndValue(normal)  # Colapsa a 0
-            self.animacion.setEasingCurve(QtCore.QEasingCurve.Type.InOutCubic)
-            self.animacion.start()
+            if self.frame_lateral.isVisible():  # Si la barra lateral está visible, la colapsamos
+                self.animacion = QPropertyAnimation(self.frame_lateral, b"minimumWidth")
+                self.animacion.setDuration(250)
+                self.animacion.setStartValue(width)
+                self.animacion.setEndValue(normal)  # Colapsa a 0
+                self.animacion.setEasingCurve(QtCore.QEasingCurve.Type.InOutCubic)
+                self.animacion.start()
 
-            # Después de la animación, hacer la barra lateral invisible
-            self.animacion.finished.connect(lambda: self.frame_lateral.setVisible(False))
+                # Después de la animación, hacer la barra lateral invisible
+                self.animacion.finished.connect(lambda: self.frame_lateral.setVisible(False))
 
-        else:  # Si la barra lateral no está visible, la expandimos
-            self.frame_lateral.setVisible(True)  # Hacer visible la barra lateral
-            self.animacion = QPropertyAnimation(self.frame_lateral, b"minimumWidth")
-            self.animacion.setDuration(250)
-            self.animacion.setStartValue(width)
-            self.animacion.setEndValue(extender)  
-            self.animacion.setEasingCurve(QtCore.QEasingCurve.Type.InOutCubic)
-            self.animacion.start()
+            else:  # Si la barra lateral no está visible, la expandimos
+                self.frame_lateral.setVisible(True)  # Hacer visible la barra lateral
+                self.animacion = QPropertyAnimation(self.frame_lateral, b"minimumWidth")
+                self.animacion.setDuration(250)
+                self.animacion.setStartValue(width)
+                self.animacion.setEndValue(extender)  
+                self.animacion.setEasingCurve(QtCore.QEasingCurve.Type.InOutCubic)
+                self.animacion.start()
 
-    def cargar_practicas(self):
+    def cargarGrid_practicas(self):
         
 
         datos=self.base_datos.mostrar_PracticaMedica()
@@ -108,6 +125,7 @@ class VentanaPrincipal(QMainWindow):
 
             tablerow +=1
             self.grdPractica.viewport().update()  # Forzar actualización del widget
+
 
 
 
