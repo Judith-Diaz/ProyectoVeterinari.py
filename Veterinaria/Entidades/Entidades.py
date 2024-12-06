@@ -1,5 +1,5 @@
 class PracticaMedica:
-    def __init__(self,Id,Descripcion):
+    def __init__(self,Id=None, Descripcion=None):
         self._Id = Id      
         self._Descripcion = Descripcion
 
