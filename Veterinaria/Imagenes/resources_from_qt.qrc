@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="iconos">
+    <file>agregar-usuario.png</file>
+    <file>borrar.png</file>
+    <file>boton-editar.png</file>
+    <file>buscar.png</file>
+    <file>comprobado.png</file>
+    <file>doctor.png</file>
+    <file>dueno-de-una-mascota.png</file>
+    <file>examen-medico.png</file>
+    <file>huella.png</file>
+    <file>hut_animal_donation_home_sheltering_pet_icon_251167.svg</file>
+  </qresource>
+  <qresource prefix="imagenes">
+    <file>ar76qlqq.png</file>
+  </qresource>
+</RCC>
