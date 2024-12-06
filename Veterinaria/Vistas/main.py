@@ -31,7 +31,7 @@ class VentanaPrincipal(QMainWindow):
         self.btn_menu.clicked.connect(self.moverMenu)
 
         self.base_datos= Conexion()
-        self.Entidades= PracticaMedica()
+        self.Practica= PracticaMedica()
 
     def mostrar_inicio(self):
      self.stackedWidget.setCurrentWidget(self.page_inicio)  # Cambia al widget de inicio
@@ -88,12 +88,12 @@ class VentanaPrincipal(QMainWindow):
             tablerow +=1
            
     def BuscarPracticaMedica(self):
-        self.Entidades=PracticaMedica()
+      
         textoBuscar=self.txtIdPracticaFiltro.text()
-        Entidades.id=textoBuscar
-        Entidades.Descripcion=textoBuscar
+        Practica.setId(textoBuscar)
+        Practica.setDescripcion(textoBuscar)
 
-        datos=self.base_datos.buscar_practicaMedica(Entidades.id, Entidades.Descripcion)
+        datos=self.base_datos.buscar_practicaMedica(Practica)
         i=len(datos)
 
         self.grdPractica.setHorizontalHeaderLabels(['ID', 'Descripción'])
