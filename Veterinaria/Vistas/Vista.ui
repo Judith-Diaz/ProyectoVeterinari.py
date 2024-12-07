@@ -135,7 +135,7 @@ QPushButton:hover {
         <string notr="true">background-color: rgb(194, 176, 252);</string>
        </property>
        <property name="currentIndex">
-        <number>8</number>
+        <number>14</number>
        </property>
        <widget class="QWidget" name="page_inicio">
         <widget class="QLabel" name="inicio_imagen">
@@ -1945,41 +1945,11 @@ QPushButton:hover {
         </widget>
        </widget>
        <widget class="QWidget" name="page_AgregarMascota">
-        <widget class="QLineEdit" name="txtCodMascotaAgregar">
-         <property name="geometry">
-          <rect>
-           <x>260</x>
-           <y>150</y>
-           <width>221</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background-color: #f4f4f4; /* Fondo claro */
-    color: #333; /* Texto oscuro */
-    border: 2px solid #ccc; /* Borde inicial */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 8px; /* Espaciado interno */
-    font-size: 14px; /* Tamaño de texto */
-    font-family: &quot;Arial&quot;, sans-serif; /* Fuente limpia y moderna */
-}
-
-QLineEdit:focus {
-    border: 2px solid #6200ee; /* Cambia el color del borde al enfocarse */
-    background-color: #ffffff; /* Fondo blanco al enfocarse */
-    color: #000; /* Texto más oscuro */
-}</string>
-         </property>
-         <property name="placeholderText">
-          <string>Ingrese Codigo de mascota</string>
-         </property>
-        </widget>
         <widget class="QLineEdit" name="txtDniMascoAgregar">
          <property name="geometry">
           <rect>
-           <x>260</x>
-           <y>210</y>
+           <x>250</x>
+           <y>130</y>
            <width>221</width>
            <height>51</height>
           </rect>
@@ -2008,8 +1978,8 @@ QLineEdit:focus {
         <widget class="QLineEdit" name="txtRazaAgregar_2">
          <property name="geometry">
           <rect>
-           <x>260</x>
-           <y>280</y>
+           <x>250</x>
+           <y>190</y>
            <width>221</width>
            <height>51</height>
           </rect>
@@ -2035,14 +2005,14 @@ QLineEdit:focus {
           <string/>
          </property>
          <property name="placeholderText">
-          <string>Especie</string>
+          <string>Raza</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="txtGeneroAgregar">
          <property name="geometry">
           <rect>
-           <x>260</x>
-           <y>350</y>
+           <x>250</x>
+           <y>250</y>
            <width>221</width>
            <height>51</height>
           </rect>
@@ -2074,8 +2044,8 @@ QLineEdit:focus {
         <widget class="QLineEdit" name="txtPesoAgregar">
          <property name="geometry">
           <rect>
-           <x>260</x>
-           <y>410</y>
+           <x>250</x>
+           <y>310</y>
            <width>221</width>
            <height>51</height>
           </rect>
@@ -2183,8 +2153,8 @@ QPushButton:hover {
         <widget class="QLineEdit" name="txtApodoMasco">
          <property name="geometry">
           <rect>
-           <x>260</x>
-           <y>480</y>
+           <x>250</x>
+           <y>380</y>
            <width>221</width>
            <height>51</height>
           </rect>
@@ -2221,6 +2191,39 @@ QLineEdit:focus {
            <width>251</width>
            <height>71</height>
           </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="txtEspecieMasco">
+         <property name="geometry">
+          <rect>
+           <x>250</x>
+           <y>450</y>
+           <width>221</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background-color: #f4f4f4; /* Fondo claro */
+    color: #333; /* Texto oscuro */
+    border: 2px solid #ccc; /* Borde inicial */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 8px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de texto */
+    font-family: &quot;Arial&quot;, sans-serif; /* Fuente limpia y moderna */
+}
+
+QLineEdit:focus {
+    border: 2px solid #6200ee; /* Cambia el color del borde al enfocarse */
+    background-color: #ffffff; /* Fondo blanco al enfocarse */
+    color: #000; /* Texto más oscuro */
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Especie</string>
          </property>
         </widget>
        </widget>

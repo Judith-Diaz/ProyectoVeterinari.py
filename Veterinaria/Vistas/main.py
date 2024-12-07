@@ -11,6 +11,7 @@ from PyQt6 import QtWidgets
 from Veterinaria.DAO.conexion_sqlite import Conexion
 
 from Veterinaria.Entidades.Entidades import PracticaMedica
+from Veterinaria.Entidades.Entidades import Mascotas
 
 class VentanaPrincipal(QMainWindow):
     def __init__(self):
@@ -32,7 +33,8 @@ class VentanaPrincipal(QMainWindow):
         self.btnFormVerPractica.clicked.connect(self.mostrar_ver_practica)
         self.btnBuscarIdpractica.clicked.connect(self.BuscarPracticaMedica)
         #MASCOTAS ABML
-        self.btnFormAgregarMascota.clicked.connect(self.Agregar_Mascota)
+        self.btnFormAgregarMascota.clicked.connect(self.redireccionar_Mascota)
+        self.btnAgregarMascota.clicked.connect(self.Agregar_MascotaSQL)
        
         self.btnFormEditMascota.clicked.connect(self.Editar_Mascota)
         self.btnFormVerMascota.clicked.connect(self.Ver_Mascota)
@@ -51,9 +53,34 @@ class VentanaPrincipal(QMainWindow):
 
         self.cargarGrid_practicas()  # Llamar a la función para cargar la tabla con los datos de la base de datos
 
-    def Agregar_Mascota(self):
+    def redireccionar_Mascota(self):
          self.stackedWidget.setCurrentWidget(self.page_AgregarMascota) 
-         self.Agregar_MascotaSQL()
+
+    def Agregar_MascotaSQL(self):
+         Mascota = Mascotas() 
+         txtDni_mas=self.txtDniMascoAgregar.text()
+         txtRaza_mas=self.txtRazaAgregar_2.text()
+         txtSexo_mas=self.txtGeneroAgregar.text()
+         txtPeso_mas=self.txtPesoAgregar.text()
+         txtApodo_mas=self.txtApodoMasco.text()
+         txtEspecie_mas=self.txtEspecieMasco.text()
+         txtFecha_mas=self.txtFechaNacimientoAgregar.date()
+         txtObservacion_mas=self.txtObservacionMasco.toPlainText()
+         print("-****************guardo las cosas************************")
+         Mascota.setDNIporietario_ma(txtDni_mas)
+         Mascota.setRaza_ma(txtRaza_mas)
+         Mascota.setGenero_ma(txtSexo_mas)
+         Mascota.setPeso_ma(txtPeso_mas)
+         Mascota.setNombre_ma(txtApodo_mas)
+         Mascota.setEspecie_ma(txtEspecie_mas)
+         Mascota.setFechaNacimiento_ma(txtFecha_mas)
+         Mascota.setObservacion_ma(txtObservacion_mas)
+         print("-****************************************")
+         print(Mascota.getDNIporietario_ma(), Mascota.getRaza_ma(),Mascota.getGenero_ma(),Mascota.getPeso_ma(),Mascota.getFechaNacimiento_ma(),Mascota.getNombre_ma(),Mascota.getEspecie_ma(),Mascota.getObservacion_ma())
+
+         datos=self.base_datos.Agregar_MascotasBD(Mascota)
+
+  
 
     def  Editar_Mascota(self):
         self.stackedWidget.setCurrentWidget(self.page_EditarMascota) 
@@ -127,8 +154,8 @@ class VentanaPrincipal(QMainWindow):
             tablerow +=1
             self.grdPractica.viewport().update()  # Forzar actualización del widget
 
-    def Agregar_MascotaSQL():
-        
+ 
+
 
 
 
@@ -139,3 +166,8 @@ if __name__ == "__main__":
     ventana = VentanaPrincipal()
     ventana.show()
     sys.exit(app.exec())
+
+    #QDateEdit=date()
+    #QQLineEdit=text()
+    #QTextEdit=toPlainText()
+    #

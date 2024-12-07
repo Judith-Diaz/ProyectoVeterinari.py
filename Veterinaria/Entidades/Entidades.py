@@ -21,12 +21,12 @@ class PracticaMedica:
 
 
 class Mascotas:
-       def __init__(self,DNIporietario_ma, raza_ma, Genero_ma, Peso_ma, Estado_ma, FechaNacimiento_ma, Nombre_ma, Especie_ma, Observacion_ma):
+       def __init__(self,DNIporietario_ma=None, raza_ma=None, Genero_ma=None, Peso_ma=None,  FechaNacimiento_ma=None, Nombre_ma=None, Especie_ma=None, Observacion_ma=None):
                 self._IDNIporietario_ma = DNIporietario_ma      
                 self._raza_ma = raza_ma
                 self._Genero_ma = Genero_ma      
                 self._Peso_ma = Peso_ma
-                self._Estado_ma = Estado_ma      
+                    
                 self._FechaNacimiento_ma = FechaNacimiento_ma
                 self._Nombre_ma = Nombre_ma      
                 self._Especie_ma = Especie_ma
@@ -56,11 +56,11 @@ class Mascotas:
        def setPeso_ma(self, value):
                 self._Peso_ma = value
 
-       def getEstado_ma(self):
-                return self._Estado_ma
+      # def getEstado_ma(self):
+               # return self._Estado_ma
 
-       def setEstado_ma(self, value):
-                self._Estado_ma = value
+       #def setEstado_ma(self, value):
+                #self._Estado_ma = value
 
        def getFechaNacimiento_ma(self):
                 return self._FechaNacimiento_ma

@@ -26,3 +26,11 @@ class Conexion():
          print(registros)  # Agrega esta línea para depurar
          return registros
     
+    def Agregar_MascotasBD(self, Mascota):
+            cursor = self.conexion.cursor()
+            cursor.execute("INSERT INTO Mascotas (DNIporietario_ma, raza_ma, Genero_ma, Peso_ma, FechaNacimiento_ma, Nombre_ma, Especie_ma, Observacion_ma) VALUES('"+Mascota.getDNIporietario_ma()+"', '"+ Mascota.getRaza_ma()+"', '"+Mascota.getGenero_ma()+"', "+Mascota.getPeso_ma()+", '"+Mascota.getFechaNacimiento_ma()+"', '"+Mascota.getNombre_ma()+"', '"+Mascota.getEspecie_ma()+"', '"+Mascota.getObservacion_ma()+"');")
+            self.conexion.commit()
+            print("Se agrego a ka bd la mascota")  # Agrega esta línea para depurar
+          
+
+    
