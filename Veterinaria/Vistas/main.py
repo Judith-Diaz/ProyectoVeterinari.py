@@ -73,7 +73,7 @@ class VentanaPrincipal(QMainWindow):
          Mascota.setPeso_ma(txtPeso_mas)
          Mascota.setNombre_ma(txtApodo_mas)
          Mascota.setEspecie_ma(txtEspecie_mas)
-         Mascota.setFechaNacimiento_ma(txtFecha_mas)
+         Mascota.setFechaNacimiento_ma(txtFecha_mas.ToString())
          Mascota.setObservacion_ma(txtObservacion_mas)
          print("-****************************************")
          print(Mascota.getDNIporietario_ma(), Mascota.getRaza_ma(),Mascota.getGenero_ma(),Mascota.getPeso_ma(),Mascota.getFechaNacimiento_ma(),Mascota.getNombre_ma(),Mascota.getEspecie_ma(),Mascota.getObservacion_ma())

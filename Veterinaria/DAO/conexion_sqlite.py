@@ -1,5 +1,5 @@
 import sqlite3
-from Veterinaria.Entidades.Entidades import PracticaMedica
+
 class Conexion():
     def __init__(self):
         self.conexion = sqlite3.connect('Veterinaria/DAO/BDProyectoPy.db')
